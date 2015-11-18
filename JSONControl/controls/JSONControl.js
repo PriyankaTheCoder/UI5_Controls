@@ -287,7 +287,7 @@ sap.ui.define(["sap/ui/core/Control", "sap/ui/base/DataType", "sap/m/Panel", "sa
 
         _getValue: function(obj, parentNode, objContent, remove, comma) {
             var oControl = this;
-            if (typeof(obj) === "number" && !Number.isNaN(obj)) {
+            if (typeof(obj) === "number" && !isNaN(obj)) {
                 context = obj;
             }
             if (typeof(obj) === "string") {
