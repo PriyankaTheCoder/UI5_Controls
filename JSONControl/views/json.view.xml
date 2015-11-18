@@ -1,0 +1,8 @@
+<core:View controllerName="sap.demo.views.json" xmlns="sap.m"
+	xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" displayBlock="false">
+	<App>
+		<Page>
+			<layout:Grid id="jsonContent" defaultSpan="L12 M12 S12"/>
+		</Page>
+	</App>
+</core:View>

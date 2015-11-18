@@ -1,0 +1,43 @@
+.changeDefaultFont.sapMText
+{
+	 font-family: Lucida Console; 
+	 font-size: 0.7em;
+}
+
+.changeBackground.sapMText
+{
+	color: rgb(192,192,192)   
+}	
+
+div.jsonControlInput{
+	height: 1.75rem;
+}
+
+div.jsonControlInput input.sapMInputBaseInner{
+	font-size: 0.75rem;
+	height: 1.25rem;
+}
+
+.changeKeyFont.sapMText
+{
+	font-family: Lucida Console; 
+	font-size: 0.7em;
+	font-weight:bold;
+	color: rgb(184,0,0) ;
+}
+
+.changeValueFont.sapMText
+{
+	font-family: Lucida Console; 
+	font-size: 0.7em;
+    color: blue;
+}
+
+div.enableScroll.sapUiVlt{
+	overflow:auto;
+}
+
+div.panelContent section.sapMPanel div.sapMPanelContent{
+	display:flex;
+	
+}
