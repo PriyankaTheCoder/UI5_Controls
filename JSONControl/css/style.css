@@ -30,14 +30,5 @@ div.jsonControlInput input.sapMInputBaseInner{
 {
 	font-family: Lucida Console; 
 	font-size: 0.7em;
-    color: blue;
-}
-
-div.enableScroll.sapUiVlt{
-	overflow:auto;
-}
-
-div.panelContent section.sapMPanel div.sapMPanelContent{
-	display:flex;
-	
+        color: blue;
 }
