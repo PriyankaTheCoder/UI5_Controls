@@ -11,6 +11,6 @@ This custom control has 2 properties:
 1. `json` string: The json string you want to parse to UI as an object
 2. `editable` : This describes whether the JSON control can support editing or not.
 
-                If 'editable = true' you can add, delete or change the JSON object
+                If editable = 'true' you can add, delete or change the JSON object
                 
                 If editable = 'false' you can only use the expand,collapse and copy functionality
