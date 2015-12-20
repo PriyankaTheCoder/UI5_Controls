@@ -13,6 +13,10 @@ sap.ui.define(["sap/ui/core/Control", "sap/ui/base/DataType", "sap/m/Panel", "sa
                 editable: {
                     type: "boolean",
                     defaultValue: true
+                },
+                collapsible:{
+                	type:"boolean",
+                	defaultValue: true
                 }
             },
             aggregations: {
@@ -119,7 +123,9 @@ sap.ui.define(["sap/ui/core/Control", "sap/ui/base/DataType", "sap/m/Panel", "sa
             var hlayout = new HorizontalLayout();
 
             this._setText("{", hlayout, "default");
-            hlayout.addContent(collapse);
+            if(oControl.getCollapsible() === true ){
+            	hlayout.addContent(collapse);
+            }
             if (oControl.getEditable() === true) {
                 hlayout.addContent(addNodes);
                 hlayout.addContent(remove);
@@ -221,7 +227,9 @@ sap.ui.define(["sap/ui/core/Control", "sap/ui/base/DataType", "sap/m/Panel", "sa
                 arr = Object.keys(obj);
             }
             this._setText(context, objContent, "default");
-            objContent.addContent(collapse);
+            if(oControl.getCollapsible() === true ){
+            	objContent.addContent(collapse);
+            }
             if (oControl.getEditable() === true) {
                 objContent.addContent(addNodes);
                 objContent.addContent(remove);
@@ -251,8 +259,9 @@ sap.ui.define(["sap/ui/core/Control", "sap/ui/base/DataType", "sap/m/Panel", "sa
                 }
 
                 this._setText(context, objContent, "default");
-                objContent.addContent(collapse);
-
+                if(oControl.getCollapsible() === true){
+                	objContent.addContent(collapse);
+                }
                 if (oControl.getEditable() === true) {
                     objContent.addContent(addNodes);
                     objContent.addContent(remove);
@@ -888,6 +897,13 @@ sap.ui.define(["sap/ui/core/Control", "sap/ui/base/DataType", "sap/m/Panel", "sa
                     oControl.getAggregation("_savebutton").setVisible(false);
                 } else {
                     oControl.getAggregation("_savebutton").setVisible(true);
+                }
+                if(oControl.getCollapsible() === false){
+                	oControl.getAggregation("_expandbutton").setVisible(false);
+                	oControl.getAggregation("_collapsebutton").setVisible(false);
+                }else{
+                	oControl.getAggregation("_expandbutton").setVisible(true);
+                	oControl.getAggregation("_collapsebutton").setVisible(true);
                 }
                 var oPanel = new Panel({
                 	height:"15rem",
