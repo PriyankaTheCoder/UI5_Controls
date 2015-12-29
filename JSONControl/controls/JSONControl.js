@@ -444,7 +444,7 @@ sap.ui.define(["sap/ui/core/Control", "sap/ui/base/DataType", "sap/m/Panel", "sa
                     }
 
                     if (contentArray.length > indexIcon) {
-                            if (contentArray[indexIcon].mProperties.hasOwnProperty("src")) {
+                            if (contentArray[indexIcon].getSrc) {
                                 if (contentArray[indexIcon].getSrc() === "sap-icon://expand") {
                                     lastContent = contentArray[contentArray.length - 1];
                                     source.removeAllContent();
@@ -462,7 +462,7 @@ sap.ui.define(["sap/ui/core/Control", "sap/ui/base/DataType", "sap/m/Panel", "sa
                         }
 
                         if (contentArray.length > indexIcon) {
-                            if (contentArray[indexIcon].mProperties.hasOwnProperty("src")) {
+                            if (contentArray[indexIcon].getSrc) {
                                 if (contentArray[indexIcon].getSrc() === "sap-icon://expand") {
                                     parent.insertContent(lastContent, indx + 1);
                                     oControl._jsonString.push(lastContent.getText());
@@ -470,7 +470,7 @@ sap.ui.define(["sap/ui/core/Control", "sap/ui/base/DataType", "sap/m/Panel", "sa
                             }
                         }
                         if (content.length - 1 > indx) {
-                            if (content[indx + 1].mProperties.hasOwnProperty('text')) {
+                            if (content[indx + 1].getText) {
                                 oControl._jsonString.push(content[indx + 1].getText());
                             }
                         }
@@ -550,7 +550,7 @@ sap.ui.define(["sap/ui/core/Control", "sap/ui/base/DataType", "sap/m/Panel", "sa
         	var oControl=this;
             var elemPNode, parentType, elemPContent, elemP, content, indx;
             var elem = arguments[0];
-            if (elem.mProperties.hasOwnProperty("value")) {
+            if (elem.getValue) {
                 val = elem.getValue();
                 elemPNode = elem.getParent();
                 content = elemPNode.getContent();
