@@ -241,7 +241,7 @@ sap.ui.define(["sap/ui/core/Control", "sap/ui/base/DataType", "sap/m/Panel", "sa
 
             for (var i = 0; i < obj.length; i++) {
                 var addComma = this._ifaddComma(arr);
-                setTimeout(this._getArray.bind(oControl),0,obj[i], content, addComma);
+                 setTimeout(this._getArrayElements.bind(oControl),0,obj[i], content, addComma);
                 objContent.addContent(content);
             }
             context = ']';
