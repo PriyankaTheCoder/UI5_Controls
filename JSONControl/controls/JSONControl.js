@@ -12,11 +12,11 @@ sap.ui.define(["sap/ui/core/Control", "sap/ui/base/DataType", "sap/m/Panel", "sa
                 },
                 editable: {
                     type: "boolean",
-                    defaultValue: true
+                    defaultValue: false
                 },
                 collapsible:{
                 	type:"boolean",
-                	defaultValue: true
+                	defaultValue: false
                 }
             },
             aggregations: {
@@ -241,7 +241,7 @@ sap.ui.define(["sap/ui/core/Control", "sap/ui/base/DataType", "sap/m/Panel", "sa
 
             for (var i = 0; i < obj.length; i++) {
                 var addComma = this._ifaddComma(arr);
-                 setTimeout(this._getArrayElements.bind(oControl),0,obj[i], content, addComma);
+                setTimeout(this._getArrayElements.bind(oControl),0,obj[i], content, addComma);
                 objContent.addContent(content);
             }
             context = ']';
@@ -324,7 +324,7 @@ sap.ui.define(["sap/ui/core/Control", "sap/ui/base/DataType", "sap/m/Panel", "sa
                 text = new customText({
                     doubleClick: this._changeKeyAndValue.bind(oControl)
                 });
-                if (identifier === "key" || identifier === "value" && !/^\d+$/i.test(context)) {
+                if (identifier === "key" || identifier === "value" && !/^\d+$/i.test(context) && context!== "true" && context !== "false") {
                     if (context.charAt(0) === '"' && context.charAt(context.length - 1) !== '"' || context.charAt(0) !== '"' && context.charAt(context.length - 1) === '"') {
                         context = "'" + context + "'";
                     }
