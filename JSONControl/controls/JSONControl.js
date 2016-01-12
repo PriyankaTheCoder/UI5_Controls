@@ -43,7 +43,17 @@ sap.ui.define(["sap/ui/core/Control", "sap/ui/base/DataType", "sap/m/Panel", "sa
 
             }
         },
-
+        
+        _container: null,
+        _scroll: null,
+        _mainLayout: null,
+        _fixLayout:null,
+        _panel: null,
+        _content: {},
+        _jsonString: [],
+        _oDialog: null,
+        _isValid: null,
+        
         init: function() {
             var oControl = this,
                 oExpandButton, oCollapseButton, oSave;
@@ -92,6 +102,7 @@ sap.ui.define(["sap/ui/core/Control", "sap/ui/base/DataType", "sap/m/Panel", "sa
                     this._container.addContent(new Text({
                         text: "Invalid JSON"
                     }));
+                    this._isValid = false;
                     return;
                 }
 
@@ -869,15 +880,7 @@ sap.ui.define(["sap/ui/core/Control", "sap/ui/base/DataType", "sap/m/Panel", "sa
             }).addStyleClass('sapUiSizeCompact jsonControlInput');
             parent.insertContent(input, index);
         },
-        _container: null,
-        _scroll: null,
-        _mainLayout: null,
-        _fixLayout:null,
-        _panel: null,
-        _content: {},
-        _jsonString: [],
-        _oDialog: null,
-
+        
         setJson: function(sVal) { // set the property json 
             if (sVal) {
                 this.setProperty("json", sVal, true);
@@ -927,6 +930,9 @@ sap.ui.define(["sap/ui/core/Control", "sap/ui/base/DataType", "sap/m/Panel", "sa
                 oControl._panel.addContent(oControl._scroll);
                 oControl._mainLayout.addContent(oControl._panel);
                 oControl._parseJSONstring();
+                if(oControl._isValid === false){
+                	oControl._panel.getAggregation("infoToolbar").removeAllContent();
+                }
                 oRm.renderControl(oControl._mainLayout);
             } 
         }
