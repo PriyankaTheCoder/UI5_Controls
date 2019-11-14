@@ -1,8 +1,8 @@
-#JSONControl
+# JSON Control
 
 A custom control which aims to display JSON text in a human-readable and flexible way. 
 
-##Features
+## Features
 1. This control validates a json string. If you pass an invalid json string, the UI will show you the same.
 2. It supports expansion and collapse of individual JSON key-value pair nodes and also allows for easy viewing of text.
 3. You can add or delete particular node - which involves array, object or single entry.
@@ -13,7 +13,7 @@ A custom control which aims to display JSON text in a human-readable and flexibl
     pass some other datatypes to keys it will automatically be converted to string.
 
 
-##Properties
+## Properties
 
 1. `json`       (type 'string')  : The json string you want to parse to UI as an object
 2. `editable`   (type 'boolean') : This describes whether the JSON control can support editing or not.
