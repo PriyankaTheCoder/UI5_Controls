@@ -2,3 +2,4 @@
 
 1. [JSONControl](https://github.com/priyankag048/UI5-Controls/blob/master/JSONControl/README.md)
     A custom control which aims to display JSON text in a human-readable and flexible way.
+    JSONControl is accessible from https://priyankag048.github.io/UI5-Controls/JSONControl/
